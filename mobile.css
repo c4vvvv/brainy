@@ -1,0 +1,235 @@
+/* =====================================================
+   MOBILE (≤768px)
+   CLEAN VERSION
+===================================================== */
+
+@media (max-width:768px){
+
+/* =========================
+   BASE
+========================= */
+
+body{
+    padding-top:72px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 14px;
+}
+
+.logo{
+    width:auto;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.logo img{
+    width:28px;
+    height:28px;
+}
+
+.logo span{
+    font-size:15px;
+}
+
+.menu{
+    width:auto;
+    display:flex;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.menu a{
+    font-size:13px;
+    padding:4px 6px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:65vh;
+    height:auto;
+    background-image:url("BBB-mobile.png");
+    background-size:cover;
+    background-position:center 10%;
+    background-repeat:no-repeat;
+     width:100%;
+    max-width:100%;
+    overflow:hidden;
+     
+}
+
+.hero-box{
+    max-width:100%;
+    padding:0 16px;
+}
+
+.hero-tag{
+    font-size:12px;
+}
+
+.hero h1{
+    font-size:32px;
+    line-height:1.2;
+}
+
+.hero h2{
+    font-size:16px;
+}
+
+.hero p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:60px 20px;
+}
+
+.section-block{
+    padding:24px;
+}
+
+.section h2{
+    font-size:28px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-card{
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+}
+
+.profile-img{
+    width:100%;
+}
+
+.profile-img img{
+    max-width:260px;
+}
+
+.profile-info{
+    width:100%;
+    text-align:center;
+}
+
+.profile-meta{
+    text-align:left;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.grid .card{
+    width:100%;
+}
+
+.card{
+    min-height:78px;
+    font-size:18px;
+    padding:18px;
+}
+
+/* =========================
+   FLOW
+========================= */
+
+.flow{
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+}
+
+.flow .card{
+    width:100%;
+}
+
+.flow .card::after{
+    display:none;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.slider{
+    max-width:100%;
+    margin:20px auto;
+}
+
+.hero-img{
+    width:100%;
+}
+
+.arrow{
+    width:40px;
+    height:40px;
+    font-size:22px;
+}
+
+.left{ left:8px; }
+.right{ right:8px; }
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:35px 20px;
+}
+
+.sub-text{
+    font-size:14px;
+    line-height:1.7;
+}
+
+.btn{
+    padding:12px 20px;
+    font-size:14px;
+}
+
+/* =========================
+   TRUST
+========================= */
+
+.trust-row{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:28px 18px;
+    font-size:12px;
+}
+
+}

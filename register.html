@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>小腦袋 Brainy｜工作坊</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="desktop.css">
+<link rel="stylesheet" href="mobile.css">
+
+
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="logo1.png" alt="小腦袋 Logo">
+    <span>小腦袋 Brainy｜工作坊</span>
+  </div>
+
+
+
+<div class="menu" id="menu">
+    <a href="index.html">首頁</a>
+    <a href="course.html">課程資訊</a>
+    <a href="register.html">報名方式</a>
+  </div>
+</nav>
+
+<style>
+.hero{
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+  background: url("BBB.png") center/cover no-repeat;
+  overflow: hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    rgba(250,247,240,.35),
+    rgba(250,247,240,.05)
+  );
+  z-index:1;
+}
+
+.hero-box{
+  position:relative;
+  max-width:560px;
+  z-index:2;
+}
+</style>
+</head>
+
+<body>
+
+
+
+
+<div class="slider">
+
+  <button class="arrow left" onclick="move(-1)">❮</button>
+
+  <div class="slider-track" id="track">
+
+    <div class="slide">
+      <img src="圖片3.png" class="hero-img">
+    </div>
+
+    <div class="slide">
+      <img src="圖片.png" class="hero-img">
+    </div>
+
+    <div class="slide">
+      <img src="圖片2.png" class="hero-img">
+    </div>
+
+  </div>
+
+  <button class="arrow right" onclick="move(1)">❯</button>
+
+</div>
+
+<!-- TRUST -->
+<div class="trust-row">
+  <div>✔ 小班制教學</div>
+  <div>✔ 專人協助報名</div>
+  <div>✔ 即時課程更新</div>
+</div>
+
+<!-- CTA -->
+<section class="section cta">
+  <h2>立即報名</h2>
+
+  <p class="sub-text">
+    加入官方LINE，由專人協助報名流程，並提供最新課程資訊
+  </p>
+
+  <a class="btn" href="https://lin.ee/Qtwddv6">加入LINE</a>
+</section>
+
+<script>
+let index = 0;
+const track = document.getElementById("track");
+const total = document.querySelectorAll(".slide").length;
+
+function move(dir){
+  index += dir;
+
+  if(index < 0) index = total - 1;
+  if(index >= total) index = 0;
+
+  track.style.transform =
+    `translateX(-${index * 100}%)`;
+}
+
+setInterval(() => move(1), 5000);
+
+document.addEventListener("keydown", e => {
+  if(e.key === "ArrowRight") move(1);
+  if(e.key === "ArrowLeft") move(-1);
+});
+</script>
+<footer>© 小腦袋 Brainy 工作坊</footer>
+<script>
+const toggle=document.getElementById("menuToggle");
+const menu=document.getElementById("menu");
+
+toggle.addEventListener("click",()=>{
+
+menu.classList.toggle("show");
+
+});
+</script>
+</body>
+</html>
