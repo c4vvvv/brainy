@@ -78,16 +78,46 @@
 <div class="profile-card founder-card">
 
   <!-- 左側圖片 -->
-  <div class="profile-img">
-    <img src="founder.jpg" alt="創辦人">
+  
+<div class="slider">
+
+  <button class="arrow left" onclick="move(-1)">❮</button>
+
+  <div class="slider-track" id="track">
+
+    <div class="slide">
+      <img src="founder.jpg" class="hero-img">
+    </div>
+
+    <div class="slide">
+      <img src="6.jpg" class="hero-img">
+    </div>
+
+    <div class="slide">
+      <img src="2.jpg" class="hero-img">
+    </div>
+    <div class="slide">
+      <img src="4.jpg" class="hero-img">
+    </div>
+    <div class="slide">
+      <img src="5.jpg" class="hero-img">
+    </div>
+    <div class="slide">
+      <img src="7.jpg" class="hero-img">
+    </div>
+
   </div>
+
+  <button class="arrow right" onclick="move(1)">❯</button>
+
+</div>
 
   <!-- 右側內容 -->
   <div class="profile-info">
 
     <h3>創辦人介紹</h3>
 
-    <p>我是小腦袋 Brainy 工作坊創辦人。</p>
+    <p>我是小腦袋 Brainy 工作坊創辦人</p>
     <p>曾參與教育學伴輔導、親子活動規劃與校園活動執行，持續關注教育學習與成長議題。</p>
     <p>目前從事行銷工作，擅長活動企劃、課程設計與體驗規劃。</p>
     <p>在陪伴孩子成長與互動的過程中，我深刻感受到每個孩子都擁有獨特的潛力，只是需要適合的環境與引導方式，才能自信地展現自己的能力與光芒。</p>
@@ -106,7 +136,8 @@
     </div>
 
     <p class="quote">
-      「孩子不是不聰明，是沒有被正確引導! 歡迎您加入我們!」
+      「每個孩子都不缺乏能力，只缺一次勇氣!
+我們在這裡，陪他跨出第一步!」
     </p>
 
   </div>
@@ -115,14 +146,37 @@
 
 <footer>© 小腦袋 Brainy 工作坊</footer>
 <script>
-const toggle=document.getElementById("menuToggle");
-const menu=document.getElementById("menu");
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("menu");
 
-toggle.addEventListener("click",()=>{
+if (toggle && menu) {
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+}
 
-menu.classList.toggle("show");
+const track = document.getElementById("track");
+const slides = document.querySelectorAll(".slide");
+const total = slides.length;
 
+let index = 0;
+
+function move(dir){
+  index += dir;
+
+  if(index < 0) index = total - 1;
+  if(index >= total) index = 0;
+
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+setInterval(() => move(1), 5000);
+
+document.addEventListener("keydown", (e) => {
+  if(e.key === "ArrowRight") move(1);
+  if(e.key === "ArrowLeft") move(-1);
 });
 </script>
+
 </body>
 </html>
